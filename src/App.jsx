@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { 
   Github, Linkedin, Mail, ArrowUpRight, Sun, Moon,
   Cpu, Database, Globe, Layers, Activity, 
-  Cloud, Smartphone, PenTool, Code2, Server, Terminal, Box
+  Cloud, Smartphone, PenTool, Code2, Server, Terminal, Box, ExternalLink
 } from "lucide-react";
 
 export default function App() {
@@ -34,6 +34,22 @@ export default function App() {
     }
   ];
 
+  // Updated with actual projects from your resume
+  const projects = [
+    {
+      title: "Trackly",
+      tech: "Go • React • PostgreSQL • Docker",
+      description: "A full-stack uptime monitoring application featuring real-time status checks, analytics dashboards, and JWT authentication for secure project management.",
+      link: "https://github.com/sidharth-chauhan"
+    },
+    {
+      title: "GoTaskify",
+      tech: "Go • GORM • Gorilla Mux • SQLite",
+      description: "A RESTful Task Management API designed with Clean Architecture and containerized for scalable, production-ready backend deployment.",
+      link: "https://github.com/sidharth-chauhan"
+    }
+  ];
+
   const techStack = ["Node.js", "React Native", "AWS Cloud", "Docker", "Golang", "PostgreSQL", "MongoDB", "GitHub Actions"];
 
   return (
@@ -43,7 +59,6 @@ export default function App() {
         <div className="fixed inset-0 z-50 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%]" />
       )}
 
-      {/* Nav: Reduced padding on mobile */}
       <nav className={`p-4 md:p-6 fixed top-0 w-full z-50 flex justify-between items-center backdrop-blur-xl border-b ${isDark ? "border-white/5 bg-black/40" : "border-black/5 bg-white/40"}`}>
         <div className="flex items-center gap-3 md:gap-4">
           <div className="flex items-center gap-2 group cursor-pointer">
@@ -68,7 +83,6 @@ export default function App() {
         </div>
       </nav>
 
-      {/* Hero Section: adjusted text for small screens */}
       <section className="pt-32 md:pt-60 pb-16 px-6 max-w-7xl mx-auto relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="lg:col-span-8 order-2 lg:order-1">
@@ -96,7 +110,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Marquee: Smaller text on mobile */}
       <div className={`py-8 md:py-12 border-y overflow-hidden whitespace-nowrap transition-colors ${isDark ? "border-white/5 bg-white/5" : "border-black/5 bg-black/5"}`}>
         <div className="flex animate-marquee gap-10 md:gap-20">
           {[...techStack, ...techStack].map((tech, i) => (
@@ -105,7 +118,6 @@ export default function App() {
         </div>
       </div>
 
-      {/* Grid: 2 columns on mobile, 4 on desktop */}
       <section className="py-20 px-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 text-center">
            <div className={`p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border ${isDark ? "border-white/5 bg-white/5" : "border-black/5 bg-black/[0.02]"}`}>
@@ -131,8 +143,8 @@ export default function App() {
         </div>
       </section>
 
-      {/* Experience: stacked on mobile */}
       <section className="py-20 px-6 max-w-7xl mx-auto">
+        <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-12">Experience</h2>
         <div className="space-y-8 md:space-y-12">
           {experiences.map((exp, i) => (
             <motion.div key={i} whileHover={{ x: 10 }} className={`p-6 md:p-12 border rounded-[2rem] md:rounded-[3rem] transition-all flex flex-col md:flex-row gap-6 md:gap-10 ${isDark ? "border-white/5 bg-white/5 hover:bg-white/10" : "border-black/5 bg-black/[0.02] hover:bg-black/[0.05]"}`}>
@@ -147,7 +159,38 @@ export default function App() {
         </div>
       </section>
 
-      {/* Education: smaller font on mobile */}
+      {/* PROJECTS SECTION WITH REAL DATA FROM PDF */}
+      <section className="py-20 px-6 max-w-7xl mx-auto">
+        <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-12">Featured Projects</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {projects.map((project, i) => (
+            <motion.div 
+              key={i} 
+              whileHover={{ y: -10 }} 
+              className={`group p-8 border rounded-[2.5rem] transition-all relative overflow-hidden flex flex-col justify-between min-h-[350px] ${isDark ? "border-white/5 bg-white/5 hover:border-neon/30" : "border-black/5 bg-black/[0.02] hover:border-blue-600/30"}`}
+            >
+              <div>
+                <div className="flex justify-between items-start mb-6">
+                  <div className={`p-3 rounded-2xl ${isDark ? "bg-black" : "bg-white"}`}>
+                    <Code2 className={isDark ? "text-neon" : "text-blue-600"} size={24} />
+                  </div>
+                  <a href={project.link} target="_blank" className="opacity-0 group-hover:opacity-100 transition-opacity">
+                    <ExternalLink size={20} className={isDark ? "text-neon" : "text-blue-600"} />
+                  </a>
+                </div>
+                <h3 className="text-2xl md:text-4xl font-black uppercase tracking-tight mb-2">{project.title}</h3>
+                <p className={`font-mono text-[9px] uppercase tracking-widest mb-4 ${isDark ? "text-gray-500" : "text-gray-400"}`}>{project.tech}</p>
+                <p className={`text-sm md:text-lg leading-relaxed font-light ${isDark ? "text-gray-400" : "text-gray-600"}`}>{project.description}</p>
+              </div>
+              
+              <div className={`mt-6 pt-6 border-t ${isDark ? "border-white/5" : "border-black/5"}`}>
+                 <span className="font-black text-[10px] uppercase italic tracking-tighter group-hover:tracking-[0.2em] transition-all">Source Code @ Github →</span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
       <section className={`py-20 md:py-32 px-6 border-t ${isDark ? "border-white/5 bg-black" : "border-black/5 bg-white"}`}>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-10">
           <div>
@@ -163,7 +206,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Footer: simplified for mobile */}
       <footer className={`py-20 md:py-40 px-6 transition-colors ${isDark ? "bg-white text-black" : "bg-black text-white"}`}>
         <div className="max-w-7xl mx-auto">
           <h2 className="text-6xl md:text-[15vw] font-black tracking-tighter leading-[0.7] mb-12 md:mb-20 uppercase text-center md:text-left">Sidharth.</h2>
