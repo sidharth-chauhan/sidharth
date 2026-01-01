@@ -34,19 +34,19 @@ export default function App() {
     }
   ];
 
-  // Updated with actual projects from your resume
+  // Projects updated with real GitHub links and resume-accurate descriptions
   const projects = [
     {
       title: "Trackly",
       tech: "Go • React • PostgreSQL • Docker",
-      description: "A full-stack uptime monitoring application featuring real-time status checks, analytics dashboards, and JWT authentication for secure project management.",
-      link: "https://github.com/sidharth-chauhan"
+      description: "Full-stack uptime monitoring application with real-time status checks, analytics dashboard, and automated alerts.",
+      link: "https://github.com/sidharth-chauhan/Trackly"
     },
     {
       title: "GoTaskify",
       tech: "Go • GORM • Gorilla Mux • SQLite",
-      description: "A RESTful Task Management API designed with Clean Architecture and containerized for scalable, production-ready backend deployment.",
-      link: "https://github.com/sidharth-chauhan"
+      description: "RESTful TODO API emphasizing clean architecture and containerization for scalable backend services.",
+      link: "https://github.com/sidharth-chauhan/GoTaskify"
     }
   ];
 
@@ -77,7 +77,7 @@ export default function App() {
         </div>
         
         <div className="flex gap-4 md:gap-6 items-center">
-          <a href="https://linkedin.com/in/sidharth-chauhan" target="_blank" className="hover:opacity-70 transition-all text-current"><Linkedin size={18} /></a>
+          <a href="https://www.linkedin.com/in/sidharth-chauhan-8a010229a/" target="_blank" className="hover:opacity-70 transition-all text-current"><Linkedin size={18} /></a>
           <a href="https://github.com/sidharth-chauhan" target="_blank" className="hover:opacity-70 transition-all text-current"><Github size={18} /></a>
           <a href="mailto:chauhansiddharth71@gmail.com" className={`hidden xs:block px-4 md:px-6 py-2 rounded-full font-bold text-[10px] uppercase tracking-widest transition-all ${isDark ? "bg-white text-black hover:bg-neon" : "bg-black text-white hover:bg-blue-600"}`}>Connect</a>
         </div>
@@ -159,7 +159,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* PROJECTS SECTION WITH REAL DATA FROM PDF */}
       <section className="py-20 px-6 max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-12">Featured Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -210,7 +209,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-6xl md:text-[15vw] font-black tracking-tighter leading-[0.7] mb-12 md:mb-20 uppercase text-center md:text-left">Sidharth.</h2>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 font-black uppercase text-[8px] md:text-[10px] tracking-widest italic text-center md:text-left">
-            <a href="https://linkedin.com/in/sidharth-chauhan" target="_blank" className="flex items-center gap-2 justify-center md:justify-start text-current">LinkedIn <ArrowUpRight size={12}/></a>
+            <a href="https://www.linkedin.com/in/sidharth-chauhan-8a010229a/" target="_blank" className="flex items-center gap-2 justify-center md:justify-start text-current">LinkedIn <ArrowUpRight size={12}/></a>
             <a href="https://github.com/sidharth-chauhan" target="_blank" className="flex items-center gap-2 justify-center md:justify-start text-current">GitHub <ArrowUpRight size={12}/></a>
             <a href="https://hashnode.com/@sidharth01" target="_blank" className="flex items-center gap-2 justify-center md:justify-start text-current">Hashnode <ArrowUpRight size={12}/></a>
             <a href="mailto:chauhansiddharth71@gmail.com" className="flex items-center gap-2 font-bold justify-center md:justify-start text-current">Email <ArrowUpRight size={12}/></a>
